@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./style.css">
+    <script src="./dist/main.js" defer></script>
+
+    <title>Notes App</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <ul class="header-notes"> 
+                <li class="header-list">Name</li>
+                <li class="header-list">Created</li>
+                <li class="header-list">Category</li>
+                <li class="header-list">Content</li>
+                <li class="header-list">Dates</li>
+                <div class="header-list icon-block">
+                    <img hidden class="edit" src="assets/edit.svg" alt="img"></img>
+                    <img class="add" src="assets/add.svg" alt="img"></img>
+                    <img class="remove" src="assets/remove.svg" alt="img"></img>
+                </div>
+            </ul>
+        </header>
+        <div class="container">
+            <div class="notes"></div>
+        </div>
+            <button type="submit" class="note-button">Create Note</button>
+
+        <ul class="header-notes"> 
+            <li class="header-list">Note Category</li>
+            <li class="header-list">Active</li>
+            <li class="header-list">Archived</li>
+        </ul>
+        <div class="categories"></div>
+
+        <ul class="header-notes"> 
+            <li class="header-list">Name</li>
+            <li class="header-list">Created</li>
+            <li class="header-list">Category</li>
+            <li class="header-list">Content</li>
+            <li class="header-list">Dates</li>
+            <div class="header-list icon-block">
+                <img hidden class="edit" src="assets/edit.svg" alt="img"></img>
+                <img class="add" src="assets/add.svg" alt="img"></img>
+                <img class="remove" src="assets/remove.svg" alt="img"></img>
+            </div>
+        </ul>
+        <div class="archived-notes"></div>
+
+    </div> 
+</body>
+</html>
