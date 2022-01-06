@@ -1,8 +1,7 @@
-import { NOTES } from '../utils.js';
 import renderNote from './renderNote';
 import renderArchive from './renderArchive.js';
 
-const filter = () => {
+const filterNotes = (notes) => {
     const archivedNotes = [];
     const activeNotes = [];
     let categories = {};
@@ -11,13 +10,12 @@ const filter = () => {
         arr.filter(item => item.archived ? archivedNotes.push(item) : activeNotes.push(item));
     }
 
-    filterArchivedSctive(NOTES);
+    filterArchivedSctive(notes);
     renderNote(activeNotes, '.notes');
     renderNote(archivedNotes, '.archived-notes');
 
-    const getCategories = () => {       
-       
-        const categoriesMap = NOTES.reduce((acc, { category, archived }) => {
+    const getCategories = () => {              
+        const categoriesMap = notes.reduce((acc, { category, archived }) => {
             if (!acc[category]) {
                 return {
                     ...acc,
@@ -27,8 +25,7 @@ const filter = () => {
                     archived: Number(!!archived),
                     }
                 };
-            }
-            
+            }           
             return {
                 ...acc,
                 [category]: {
@@ -37,12 +34,11 @@ const filter = () => {
                     archived: acc[category].archived + Number(!!archived)
                 },
             };
-          }, {});
-          
+          }, {});         
         categories = Object.values(categoriesMap);
     }
     getCategories();
     renderArchive(categories);
 }
 
-export default filter;
+export default filterNotes;

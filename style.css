@@ -51,19 +51,11 @@ h1, h2, h3, h4, h5, h6 {font-size: inherit; font-weight: inherit;}
     margin: 8px;
 }
 
-/* li.icon-block:first-child {
-    visibility: hidden;
-} */
-
-/* .header-list:first-child {
-    visibility: hidden;
-}   */
-
 .note {
     margin: 10px 0;
     padding: 0 10px;
     background-color: rgb(201, 235, 236);
-    height: 50px;
+    min-height: 50px;
     width: 100hv;
     display: flex;
     flex-wrap: nowrap;
@@ -73,6 +65,7 @@ h1, h2, h3, h4, h5, h6 {font-size: inherit; font-weight: inherit;}
     font-size: 18px;
     text-overflow: ellipsis; 
 }
+
 .note:hover {
     background-color: rgb(216, 245, 245);
     box-shadow: 0 0 10px 0 #adaaaa; 
@@ -82,22 +75,21 @@ h1, h2, h3, h4, h5, h6 {font-size: inherit; font-weight: inherit;}
 
 .note li  {
     /* flex: 1 0 0px; */
-    width: 17%;
+    width: 20%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    /* margin: 0 auto; */
 } 
 
 .note-button {
     width: 120px;
     height: 30px;
-    display: inline-block;
     border-radius: 5px;
     font-size: 20px;
     border: 2px solid #57584d;
     margin: 0 20px 10px 90%;
 }
+
 .note-button:hover {
     background-color: #333;
 	color: #eaf7b0;
@@ -105,4 +97,11 @@ h1, h2, h3, h4, h5, h6 {font-size: inherit; font-weight: inherit;}
     /* box-shadow: 0 0 10px 0 #adaaaa; */
     /* transform: scale(1.04); */
     /* transition: transform 500ms ease; */
+}
+
+.edit-done {
+    width: 60px;
+    height: 25px;
+    margin: 5px 0 0 0;
+    visibility: hidden;
 }
