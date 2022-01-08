@@ -3,14 +3,14 @@ const renderNote = (list, selector) => {
     const noteWrapper = document.querySelector(selector);
     noteWrapper.innerHTML = '';
 
-    list.forEach(notesItem => {
+    list.forEach(({id, name, created, category, content, dates}) => {
         noteWrapper.insertAdjacentHTML('beforeend', `
-            <ul class="note" data-key="${notesItem.id}"> 
-                <li class="note-list" value=1>${notesItem.name}</li>
-                <li class="note-list">${notesItem.created}</li>
-                <li class="note-list" value=2>${notesItem.category}</li>
-                <li class="note-list" value=3>${notesItem.content}</li>
-                <li class="note-list" value=4>${notesItem.dates}</li>
+            <ul class="note" data-key="${id}"> 
+                <li class="note-list" value=1>${name}</li>
+                <li class="note-list">${created}</li>
+                <li class="note-list">${category}</li>
+                <li class="note-list note-content" value=2>${content}</li>
+                <li class="note-list" value=3>${dates}</li>
                 <div >
                     <button type="submit" class="note-button edit-done">Done</button>
                 </div>

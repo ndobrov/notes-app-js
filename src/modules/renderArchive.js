@@ -3,12 +3,12 @@ const renderArchive = (categories) => {
     const categoriesWrapper = document.querySelector('.categories');
     categoriesWrapper.innerHTML = '';
 
-    categories.forEach(category => {
+    categories.forEach(({category, active, archived}) => {
         categoriesWrapper.insertAdjacentHTML('beforeend', `
             <ul class="note"> 
-                <li class="note-list">${category.category}</li>
-                <li class="note-list">${category.active}</li>
-                <li class="note-list">${category.archived}</li>              
+                <li class="note-list">${category}</li>
+                <li class="note-list">${active}</li>
+                <li class="note-list">${archived}</li>              
             </ul>
         `)
     })    

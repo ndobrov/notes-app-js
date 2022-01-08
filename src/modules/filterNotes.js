@@ -1,44 +1,19 @@
 import renderNote from './renderNote';
-import renderArchive from './renderArchive.js';
+import renderArchive from './renderArchive';
+import addListeners from './addListeners';
+import { filterArchivedActive, filterCategories } from './filters';
 
 const filterNotes = (notes) => {
     const archivedNotes = [];
     const activeNotes = [];
-    let categories = {};
 
-    const filterArchivedSctive = (arr) => {
-        arr.filter(item => item.archived ? archivedNotes.push(item) : activeNotes.push(item));
-    }
-
-    filterArchivedSctive(notes);
+    filterArchivedActive(notes, archivedNotes, activeNotes);
+    
     renderNote(activeNotes, '.notes');
     renderNote(archivedNotes, '.archived-notes');
+    renderArchive(filterCategories(notes));
 
-    const getCategories = () => {              
-        const categoriesMap = notes.reduce((acc, { category, archived }) => {
-            if (!acc[category]) {
-                return {
-                    ...acc,
-                    [category]: {
-                    category,
-                    active: Number(!archived),
-                    archived: Number(!!archived),
-                    }
-                };
-            }           
-            return {
-                ...acc,
-                [category]: {
-                    ...acc[category],
-                    active: acc[category].active + Number(!archived),
-                    archived: acc[category].archived + Number(!!archived)
-                },
-            };
-          }, {});         
-        categories = Object.values(categoriesMap);
-    }
-    getCategories();
-    renderArchive(categories);
+    addListeners();
 }
 
 export default filterNotes;
