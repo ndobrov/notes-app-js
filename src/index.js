@@ -1,7 +1,6 @@
-import note from "./modules/note";
 import filterNotes from "./modules/filterNotes";
 import createNote from "./modules/createNote";
+import { NOTES } from './constans.js';
 
-note();
-filterNotes();
-createNote();
+filterNotes(NOTES);
+createNote(NOTES)
