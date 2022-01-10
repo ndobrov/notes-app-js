@@ -120,3 +120,19 @@ h1, h2, h3, h4, h5, h6 {font-size: inherit; font-weight: inherit;}
     margin: 5px 0 0 0;
     visibility: hidden;
 }
+
+.date-input {
+    visibility: hidden;
+}
+
+.categories-list, .category-change {
+    display: none;
+}
+  
+.categories-list li{
+    width: 100%;
+    margin: 1px;
+    text-align: start;
+    cursor: pointer;
+    background-color: rgb(245, 248, 247);
+}
